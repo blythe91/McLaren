@@ -1,0 +1,22 @@
+<%= form_for(structure_level) do |f| %>
+  <% if structure_level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(structure_level.errors.count, "error") %> prohibited this structure_level from being saved:</h2>
+
+      <ul>
+      <% structure_level.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

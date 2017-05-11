@@ -1,0 +1,2 @@
+module SprPeopleHelper
+end

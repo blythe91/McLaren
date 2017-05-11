@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dnis:</strong>
+  <%= @person.dnis %>
+</p>
+
+<p>
+  <strong>Birth:</strong>
+  <%= @person.birth %>
+</p>
+
+<p>
+  <strong>Promise day:</strong>
+  <%= @person.promise_day %>
+</p>
+
+<p>
+  <strong>Spr person:</strong>
+  <%= @person.spr_person %>
+</p>
+
+<p>
+  <strong>Parish:</strong>
+  <%= @person.parish %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

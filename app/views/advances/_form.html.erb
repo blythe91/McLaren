@@ -1,0 +1,27 @@
+<%= form_for(advance) do |f| %>
+  <% if advance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advance.errors.count, "error") %> prohibited this advance from being saved:</h2>
+
+      <ul>
+      <% advance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :unity_id %>
+    <%= f.text_field :unity_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

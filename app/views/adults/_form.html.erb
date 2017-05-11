@@ -1,0 +1,22 @@
+<%= form_for(adult) do |f| %>
+  <% if adult.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adult.errors.count, "error") %> prohibited this adult from being saved:</h2>
+
+      <ul>
+      <% adult.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :person_id %>
+    <%= f.text_field :person_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  document: MyString
+  asv_member: false
+  representative: false
+  first_name: MyString
+  second_name: MyString
+  first_last_name: MyString
+  second_last_name: MyString
+  gender: MyString
+  mobile_phone: MyString
+  phone: MyString
+  main_email: MyString
+  second_email: MyString
+  address: MyString
+  ocupation: one
+  nationality: one
+  academic_level: one
+  relationship: one
+  Document_type: one
+
+two:
+  document: MyString
+  asv_member: false
+  representative: false
+  first_name: MyString
+  second_name: MyString
+  first_last_name: MyString
+  second_last_name: MyString
+  gender: MyString
+  mobile_phone: MyString
+  phone: MyString
+  main_email: MyString
+  second_email: MyString
+  address: MyString
+  ocupation: two
+  nationality: two
+  academic_level: two
+  relationship: two
+  Document_type: two

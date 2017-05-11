@@ -1,0 +1,120 @@
+<%= form_for(spr_person) do |f| %>
+  <% if spr_person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(spr_person.errors.count, "error") %> prohibited this spr_person from being saved:</h2>
+
+      <ul>
+      <% spr_person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="input-field field col l3 m6 s12">
+    <%= f.collection_select :Document_type_id, DocumentType.all, :id, :tok %>
+    <%= f.label :Document_type_id %>
+  </div>
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :document %>
+    <%= f.text_field :document %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    
+  </div>
+
+  <div class="input-field field col m6 s12">
+    
+    <%= f.check_box :asv_member %>
+    <%= f.label :asv_member %>
+  </div>
+
+  <div class="input-field field col m6 s12">
+    
+    <%= f.check_box :representative %>
+    <%= f.label :representative %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :second_name %>
+    <%= f.text_field :second_name %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :first_last_name %>
+    <%= f.text_field :first_last_name %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :second_last_name %>
+    <%= f.text_field :second_last_name %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.collection_select :ocupation_id, Ocupation.all, :id, :description %>
+    <%= f.label :ocupation_id %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    
+    <%= f.collection_select :nationality_id, Nationality.all, :id, :description %>
+    <%= f.label :nationality_id %>  
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.collection_select :academic_level_id, AcademicLevel.all, :id, :description %>
+    <%= f.label :academic_level_id %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.collection_select :relationship_id, Relationship.all, :id, :description %>
+    <%= f.label :relationship_id %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.select :gender, [['Male', 'M'], ['Female', 'F']] %>
+    <%= f.label :gender %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :mobile_phone %>
+    <%= f.text_field :mobile_phone %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :main_email %>
+    <%= f.text_field :main_email %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :second_email %>
+    <%= f.text_field :second_email %>
+  </div>
+
+  <div class="input-field field col l3 m6 s12">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  
+</div>
+<div class="actions">
+    <%= f.submit %>
+</div>
+ <script>
+        $(document).ready(function() {
+          $('select').material_select();
+        });
+ </script>
+<% end %>

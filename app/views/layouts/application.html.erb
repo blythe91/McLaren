@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>McLaren</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  	<nav>
+  		<div class="container">
+	  		<div class="nav-wrapper">
+	  			<a href="#!" class="brand-logo">
+	  				<h4>Mclaren</h4>
+	  			</a>
+	  			<ul id="nav-mobile" class="right hide-on-med-and-down menu">
+	  				
+	  				<li>
+						<a href="#!">Master</a>
+						<ul>
+							<li>
+			  					<%= link_to "People", people_path %>
+			  				</li>
+			  				<li>
+			  					<%= link_to "spr_people", spr_people_path %>
+			  				</li>
+			  				
+						</ul>
+					</li>  				
+					<li>
+						<a href="#!">Params</a>
+						<ul>
+							<li>
+			  					<%= link_to "ocupations", ocupations_path %>
+			  				</li>
+			  				<li>
+			  					<%= link_to "nationalities", nationalities_path %>
+			  				</li>
+			  				<li>
+			  					<%= link_to "relationships", relationships_path %>
+			  				</li>
+			  				<li>
+			  					<%= link_to "Academic Level", academic_levels_path %>
+			  				</li>	
+			  				<li>
+			  					<%= link_to "Document Types", document_types_path %>
+			  				</li>
+			  				<li>
+			  					<%= link_to "States", states_path %>
+			  				</li>
+			  				<li>
+			  					<%= link_to "Municipalities", municipalities_path %>
+			  				</li>
+			  				<li>
+			  					<%= link_to "Parishes", parishes_path %>
+			  				</li>
+						</ul>
+					</li>
+	  				
+	  				
+	  				
+	  			</ul>
+	  		</div>
+		</div>
+  		
+  	</nav>
+
+  	<div class="container">
+  		<%= yield %>	
+  	</div>
+    
+  </body>
+</html>

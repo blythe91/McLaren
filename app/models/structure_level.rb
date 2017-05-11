@@ -1,0 +1,2 @@
+class StructureLevel < ApplicationRecord
+end
