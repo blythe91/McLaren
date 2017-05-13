@@ -2,14 +2,14 @@
 
 one:
   dnis: 1
-  birth: 2017-05-10
-  promise_day: 2017-05-10
+  birth: 2017-05-12
+  promise_day: 2017-05-12
   spr_person: one
   parish: one
 
 two:
   dnis: 1
-  birth: 2017-05-10
-  promise_day: 2017-05-10
+  birth: 2017-05-12
+  promise_day: 2017-05-12
   spr_person: two
   parish: two

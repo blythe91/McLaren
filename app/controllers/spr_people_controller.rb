@@ -15,10 +15,12 @@ class SprPeopleController < ApplicationController
   # GET /spr_people/new
   def new
     @spr_person = SprPerson.new
+    @spr_person.person.build
   end
 
   # GET /spr_people/1/edit
   def edit
+    @spr_person.person
   end
 
   # POST /spr_people
@@ -69,6 +71,12 @@ class SprPeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def spr_person_params
-      params.require(:spr_person).permit(:document, :asv_member, :representative, :first_name, :second_name, :first_last_name, :second_last_name, :gender, :mobile_phone, :phone, :main_email, :second_email, :address, :ocupation_id, :nationality_id, :academic_level_id, :relationship_id, :Document_type_id, people_attributes: [:id, :birth, :promise_date, :parish])
+      params.require(:spr_person).permit(:document, :asv_member, :representative, 
+                                         :first_name, :second_name, :first_last_name, 
+                                         :second_last_name, :gender, :mobile_phone, 
+                                         :phone, :main_email, :second_email, :address, 
+                                         :ocupation_id, :nationality_id, :academic_level_id, 
+                                         :relationship_id, :document_type_id,
+                                          people_attributes: [:id, :dnis, :birth, :promise_day, :parish_id])
     end
 end

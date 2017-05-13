@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :people
+  resources :spr_people
+  resources :registries
   resources :advances
   resources :charges
   resources :groups
@@ -7,10 +10,8 @@ Rails.application.routes.draw do
   resources :unities
   resources :specialties
   resources :structure_levels
-  resources :people
   resources :training_levels
   resources :adults
-  resources :spr_people
   resources :parishes
   resources :municipalities
   resources :states

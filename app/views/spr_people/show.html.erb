@@ -1,92 +1,118 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
+  <p class="col l3 m6 s12">
+    <strong>Document:</strong>
+    <%= @spr_person.document_type %> <%= @spr_person.document %>
+  </p>
 
+  <p class="col l3 m6 s12">
+    <strong>Asv member:</strong>
+    <%= @spr_person.asv_member %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Representative:</strong>
+    <%= @spr_person.representative %>
+  </p>
+
+   <p class="col l3 m6 s12">
+    <strong>Gender:</strong>
+    <%= @spr_person.gender %>
+  </p>
+  
+  <p class="col l3 m6 s12">
+    <strong>First name:</strong>
+    <%= @spr_person.first_name %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Second name:</strong>
+    <%= @spr_person.second_name %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>First last name:</strong>
+    <%= @spr_person.first_last_name %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Second last name:</strong>
+    <%= @spr_person.second_last_name %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Mobile phone:</strong>
+    <%= @spr_person.mobile_phone %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Phone:</strong>
+    <%= @spr_person.phone %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Main email:</strong>
+    <%= @spr_person.main_email %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Second email:</strong>
+    <%= @spr_person.second_email %>
+  </p>
+  <p class="col l3 m6 s12">
+    <strong>Ocupation:</strong>
+    <%= @spr_person.ocupation %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Nationality:</strong>
+    <%= @spr_person.nationality %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Academic level:</strong>
+    <%= @spr_person.academic_level %>
+  </p>
+
+  <p class="col l3 m6 s12">
+    <strong>Relationship:</strong>
+    <%= @spr_person.relationship %>
+  </p>
+
+  <p class="col s12">
+    <strong>Address:</strong>
+    <%= @spr_person.address %>
+  </p>
+
+  <fieldset class="col s12">
+    <legend>Datos Scout</legend>
     
-    <p class="col s12">
-      <strong>Document:</strong>
-      <%= @spr_person.Document_type.to_s %><%= @spr_person.document %>
-    </p>
-
+      <% people = @spr_person.person %>
+        <p class="col l3 m6 s12">
+          <strong>dnis:</strong>
+          <%= people.dnis %>
+        </p>
+        <p class="col l3 m6 s12">
+          <strong>Birth:</strong>
+          <%= people.birth %>
+        </p>
+        <p class="col l3 m6 s12">
+          <strong>Promise day:</strong>
+          <%= people.promise_day %>
+        </p>
+        <p class="col l3 m6 s12">
+          <strong>Resident Parish:</strong>
+          <%= people.parish.to_s %>
+        </p>        
+      
+      
     
+  </fieldset>
 
-    <p class="col l3 m6 s12">
-      <strong>First name:</strong>
-      <%= @spr_person.first_name %>
-    </p>
+  
 
-    <p class="col l3 m6 s12">
-      <strong>Second name:</strong>
-      <%= @spr_person.second_name %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>First last name:</strong>
-      <%= @spr_person.first_last_name %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Second last name:</strong>
-      <%= @spr_person.second_last_name %>
-    </p>
-    <p class="col l3 m6 s12">
-      <strong>Asv member:</strong>
-      <%= @spr_person.asv_member %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Representative:</strong>
-      <%= @spr_person.representative %>
-    </p>
-    <p class="col l3 m6 s12">
-      <strong>Ocupation:</strong>
-      <%= @spr_person.ocupation.to_s %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Nationality:</strong>
-      <%= @spr_person.nationality.to_s %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Academic level:</strong>
-      <%= @spr_person.academic_level.to_s %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Relationship:</strong>
-      <%= @spr_person.relationship.to_s %>
-    </p>
-    <p class="col l3 m6 s12">
-      <strong>Gender:</strong>
-      <%= @spr_person.gender %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Mobile phone:</strong>
-      <%= @spr_person.mobile_phone %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Phone:</strong>
-      <%= @spr_person.phone %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Main email:</strong>
-      <%= @spr_person.main_email %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Second email:</strong>
-      <%= @spr_person.second_email %>
-    </p>
-
-    <p class="col l3 m6 s12">
-      <strong>Address:</strong>
-      <%= @spr_person.address %>
-    </p>
+  
 </div>
-
 <%= link_to 'Edit', edit_spr_person_path(@spr_person) %> |
 <%= link_to 'Back', spr_people_path %>

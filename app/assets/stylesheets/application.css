@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ div.campo{
+    height: 5rem;
+ }
  nav{
  	background: #652299;
  }
@@ -29,7 +33,9 @@ ul.menu{
 	text-align: justify; 
 	height: 4rem;
 }
-
+fieldset{
+    margin: 2rem auto;
+}
 /*
 
 /ÉSTO ES PARA QUE EL MENU SE DISTRIBUYA HORIZONTALMENTE DE FORMA UNIFORME

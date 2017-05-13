@@ -1,11 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Spr People</h1>
-
+<%= link_to 'New Spr Person', new_spr_person_path, :class => "waves-effect waves-teal btn-flat" %>
 <table>
   <thead>
     <tr>
-      <th></th>
       <th>Document</th>      
       <th>First name</th>
       <th>Second name</th>
@@ -18,8 +17,7 @@
   <tbody>
     <% @spr_people.each do |spr_person| %>
       <tr>
-        <td><%= spr_person.Document_type %></td>
-        <td><%= spr_person.document %></td>        
+        <td><%= spr_person.document_type.to_s+" "+spr_person.document %></td>
         <td><%= spr_person.first_name %></td>
         <td><%= spr_person.second_name %></td>
         <td><%= spr_person.first_last_name %></td>
@@ -34,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Spr Person', new_spr_person_path %>
+

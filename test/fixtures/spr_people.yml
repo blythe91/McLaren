@@ -18,7 +18,7 @@ one:
   nationality: one
   academic_level: one
   relationship: one
-  Document_type: one
+  document_type: one
 
 two:
   document: MyString
@@ -38,4 +38,4 @@ two:
   nationality: two
   academic_level: two
   relationship: two
-  Document_type: two
+  document_type: two

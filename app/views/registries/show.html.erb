@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registry date:</strong>
+  <%= @registry.registry_date %>
+</p>
+
+<p>
+  <strong>Adult:</strong>
+  <%= @registry.adult %>
+</p>
+
+<%= link_to 'Edit', edit_registry_path(@registry) %> |
+<%= link_to 'Back', registries_path %>

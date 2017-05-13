@@ -22,11 +22,6 @@ ocp_list = [
 	"Matemático"
 ]
 
-ocp_list.each do |desc|
-	Ocupation.create(description: desc)
-	p "Created #{Ocupation.count} Ocupations"
-end
-
 academic_lev_list = [
 	"none",
 	"Basic",
@@ -36,12 +31,6 @@ academic_lev_list = [
 	"Doctorate",
 	"PHD"
 ]
-
-academic_lev_list.each do |desc|
-	AcademicLevel.create(description: desc)
-	p "Created #{AcademicLevel.count} Academic Levels"
-end
-
 
 relationship_list = [
 	"none",
@@ -53,23 +42,12 @@ relationship_list = [
 	"Tutor Legal"
 ]
 
-relationship_list.each do |desc|
-	Relationship.create(description: desc)
-	p "Created #{Relationship.count} Relationships"
-end
-
-
 document_type_list = [
 	["Cédula Venezolana", "V-"],
 	["Cédula Extranjera", "E-"],
 	["Pasaporte", "P-"],
 	["Persona Juridica", "J-"]
 ]
-
-document_type_list.each do |desc, tk|
-	DocumentType.create(description: desc, tok: tk)
-	p "Created #{DocumentType.count} Document Types"
-end
 
 nationality_list = [
 	"VENEZOLANA",
@@ -247,12 +225,6 @@ nationality_list = [
 	"ESLOVAQUIA"
 ]
 
-nationality_list.each do |desc|
-	Nationality.create(description: desc)
-	p "Created #{Nationality.count} Nationalities"
-end
-
-
 state_list = [
 	"Amazonas",
 	"Anzoátegui",
@@ -280,12 +252,6 @@ state_list = [
 	"Distrito Capital",
 	"Dependencias Federales"
 ]
-
-state_list.each do |desc|
-	State.create(description: desc)
-	p "Created #{State.count} States"
-end
-
 
 municipality_list = [
 	[ 1, "Alto Orinoco" ],
@@ -624,12 +590,6 @@ municipality_list = [
 	[ 23, "Valmore Rodríguez" ],
 	[ 24, "Libertador" ]
 ]
-
-municipality_list.each do |id,desc|
-	Municipality.create(State_id: id, description: desc)
-	p "Created #{Municipality.count} Municipalities"
-end
-
 
 parish_list = [
 	[ 1, "Alto Orinoco" ],
@@ -1771,6 +1731,41 @@ parish_list = [
 	[ 372, "Granados" ],
 	[ 373, "Arnoldo Gabaldón" ]
 ]
+
+ocp_list.each do |desc|
+	Ocupation.create(description: desc)
+	p "Created #{Ocupation.count} Ocupations"
+end
+
+academic_lev_list.each do |desc|
+	AcademicLevel.create(description: desc)
+	p "Created #{AcademicLevel.count} Academic Levels"
+end
+
+relationship_list.each do |desc|
+	Relationship.create(description: desc)
+	p "Created #{Relationship.count} Relationships"
+end
+
+document_type_list.each do |desc, tk|
+	DocumentType.create(description: desc, tok: tk)
+	p "Created #{DocumentType.count} Document Types"
+end
+
+nationality_list.each do |desc|
+	Nationality.create(description: desc)
+	p "Created #{Nationality.count} Nationalities"
+end
+state_list.each do |desc|
+	State.create(description: desc)
+	p "Created #{State.count} States"
+end
+
+municipality_list.each do |id,desc|
+	Municipality.create(State_id: id, description: desc)
+	p "Created #{Municipality.count} Municipalities"
+end
+
 parish_list.each do |id, desc|
 	Parish.create(Municipality_id: id,description: desc)
 	p "Created #{Parish.count} Parishes"
@@ -1778,7 +1773,7 @@ end
 
 gender_list = ['M','F']
 
-500.times do |index|
+50.times do |index|
 
 	first_name1 = Faker::Name.first_name
 	first_name2 = Faker::Name.first_name
@@ -1801,15 +1796,20 @@ gender_list = ['M','F']
 					 relationship_id: Random.rand(1...relationship_list.length),
 					 ocupation_id: Random.rand(1...ocp_list.length),
 					 nationality_id: Random.rand(1...nationality_list.length),
-					 Document_type_id: Random.rand(1...document_type_list.length),
+					 document_type_id: Random.rand(1...document_type_list.length),
 					 academic_level_id: Random.rand(1...academic_lev_list.length),
 					 address: Faker::Address.full_address)
 
-	Person.create(dnis: Random.rand(4356...13000),
+	pr1 = Person.create(dnis: Random.rand(4356...13000),
 				  spr_person_id: spr1.id,
 				  birth: Faker::Time.between(80.years.ago, 21.years.ago),
 				  promise_day: Faker::Time.between(70.years.ago, 1.week.ago),
 				  parish_id: Random.rand(1...parish_list.length) )
+
+	adt = Adult.create( person_id: pr1.id )
+
+	Registry.create( adult_id: adt.id,
+		 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago))
 
 	p "Created #{SprPerson.count} Instances of People..."
 end

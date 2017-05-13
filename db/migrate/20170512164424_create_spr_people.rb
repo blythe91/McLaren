@@ -18,7 +18,7 @@ class CreateSprPeople < ActiveRecord::Migration[5.0]
       t.references :nationality, foreign_key: true
       t.references :academic_level, foreign_key: true
       t.references :relationship, foreign_key: true
-      t.references :Document_type, foreign_key: true
+      t.references :document_type, foreign_key: true
 
       t.timestamps
     end

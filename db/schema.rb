@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511024729) do
+ActiveRecord::Schema.define(version: 20170512164524) do
 
   create_table "academic_levels", force: :cascade do |t|
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "adults", force: :cascade do |t|
+    t.integer  "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_adults_on_person_id"
   end
 
   create_table "advances", force: :cascade do |t|
@@ -105,6 +112,14 @@ ActiveRecord::Schema.define(version: 20170511024729) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "registries", force: :cascade do |t|
+    t.date     "registry_date"
+    t.integer  "adult_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["adult_id"], name: "index_registries_on_adult_id"
+  end
+
   create_table "relationships", force: :cascade do |t|
     t.string   "description"
     t.datetime "created_at",  null: false
@@ -135,11 +150,11 @@ ActiveRecord::Schema.define(version: 20170511024729) do
     t.integer  "nationality_id"
     t.integer  "academic_level_id"
     t.integer  "relationship_id"
-    t.integer  "Document_type_id"
+    t.integer  "document_type_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.index ["Document_type_id"], name: "index_spr_people_on_Document_type_id"
     t.index ["academic_level_id"], name: "index_spr_people_on_academic_level_id"
+    t.index ["document_type_id"], name: "index_spr_people_on_document_type_id"
     t.index ["nationality_id"], name: "index_spr_people_on_nationality_id"
     t.index ["ocupation_id"], name: "index_spr_people_on_ocupation_id"
     t.index ["relationship_id"], name: "index_spr_people_on_relationship_id"
