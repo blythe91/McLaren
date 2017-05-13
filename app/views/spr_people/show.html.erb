@@ -87,8 +87,8 @@
 
   <fieldset class="col s12">
     <legend>Datos Scout</legend>
-    
-      <% people = @spr_person.person %>
+    <% if @spr_person.people.any? %>
+      <% @spr_person.people.each do |people| %>
         <p class="col l3 m6 s12">
           <strong>dnis:</strong>
           <%= people.dnis %>
@@ -105,9 +105,9 @@
           <strong>Resident Parish:</strong>
           <%= people.parish.to_s %>
         </p>        
+      <% end %>
       
-      
-    
+    <% end %>
   </fieldset>
 
   

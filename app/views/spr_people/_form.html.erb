@@ -104,7 +104,7 @@
   <fieldset class="col s12">
     <legend>Datos Scout</legend>
 
-      <%= f.fields_for :person do |var| %>
+      <%= f.fields_for :people do |var| %>
 
         <div class="campo input-field col l3 m6 s12">
           <%= var.text_field :dnis, pattern: "[0-9]*", maxlength: "6", required:"required", title: "123456 (Ej)" %>

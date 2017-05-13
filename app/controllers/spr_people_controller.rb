@@ -15,12 +15,12 @@ class SprPeopleController < ApplicationController
   # GET /spr_people/new
   def new
     @spr_person = SprPerson.new
-    @spr_person.person.build
+    @spr_person.people.build
   end
 
   # GET /spr_people/1/edit
   def edit
-    @spr_person.person
+    @spr_person.people
   end
 
   # POST /spr_people
