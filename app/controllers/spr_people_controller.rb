@@ -4,12 +4,13 @@ class SprPeopleController < ApplicationController
   # GET /spr_people
   # GET /spr_people.json
   def index
-    @spr_people = SprPerson.all
+    @spr_people = SprPerson.select("*")
   end
 
   # GET /spr_people/1
   # GET /spr_people/1.json
   def show
+
   end
 
   # GET /spr_people/new

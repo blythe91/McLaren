@@ -1,0 +1,2 @@
+class TrainingWorkshop < ApplicationRecord
+end

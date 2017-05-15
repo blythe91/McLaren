@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
+  resources :training_workshops
   resources :people
   resources :spr_people
   resources :registries
@@ -21,4 +24,6 @@ Rails.application.routes.draw do
   resources :relationships
   resources :ocupations
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root :to => 'welcome#index'
 end

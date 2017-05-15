@@ -5,7 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Person</th>
+      <th>dnis</th>
+      <th>Document</th>
+      <th>Full Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +15,9 @@
   <tbody>
     <% @adults.each do |adult| %>
       <tr>
-        <td><%= adult.person %></td>
+        <td><%= adult.dnis %></td>
+        <td><%= adult.id_document %></td>
+        <td><%= adult.full_name %></td>
         <td><%= link_to 'Show', adult %></td>
         <td><%= link_to 'Edit', edit_adult_path(adult) %></td>
         <td><%= link_to 'Destroy', adult, method: :delete, data: { confirm: 'Are you sure?' } %></td>

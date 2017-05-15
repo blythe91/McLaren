@@ -1732,6 +1732,158 @@ parish_list = [
 	[ 373, "Arnoldo Gabaldón" ]
 ]
 
+
+
+
+structure_lev_list = [
+	"Grupo",
+	"Distrito",
+	"Región (Nac)",
+	"Nacional",
+	"superuser",
+]
+
+charges_list = [
+	["Adulto Colaborador", 1],
+	["Jefe De Manada Masculina", 1],
+	["Sub Jefe De Manada Masculina", 1],
+	["Jefe De Manada Femenina", 1],
+	["Sub Jefe De Manada Femenina", 1],
+	["Jefe De Tropa Masculina", 1],
+	["Sub Jefe De Tropa Masculina", 1],
+	["Jefe De Tropa Femenina", 1],
+	["Sub Jefe De Tropa Femenina", 1],
+	["Jefe De Clan Masculino", 1],
+	["Sub Jefe De Clan Masculino", 1],
+	["Jefe De Clan Femenino", 1],
+	["Sub Jefe De Clan Femenino", 1],
+	["Jefe De Grupo", 1],
+	["Sub Jefe De Grupo", 1],
+	["Tesorero De Grupo", 1],
+	["Representante Institucion Patrocinadora", 1],
+	["Representante de Unidad Manada Masculina", 1],
+	["Representante de Unidad Manada Femenina", 1],
+	["Representante de Unidad Tropa Masculina", 1],
+	["Representante de Unidad Tropa Femenina", 1],
+	["Representante de Unidad Clan Masculino", 1],
+	["Representante de Unidad Clan Femenino", 1],
+	["Comisionado Distrital", 2],
+	["Asistente Distrital De Programa de Jovenes", 2],
+	["Asistente Distrital De Adultos en el Movimiento", 2],
+	["Asistente Distrital De Operaciones", 2],
+	["Asistente Distrital De Administraccion", 2],
+	["Asistente Distrital De Comunicaciones", 2],
+	["Asistente Distrital De Gestion Institucional", 2],
+	["Asistente Distrital De Desarrollo Financiero", 2],
+	["Cooperador Distrital De Programa de Jovenes", 2],
+	["Cooperador Distrital De Adultos en el Movimiento", 2],
+	["Cooperador Distrital De Operaciones", 2],
+	["Cooperador Distrital De Administraccion", 2],
+	["Cooperador Distrital De Comunicaciones", 2],
+	["Cooperador Distrital De Gestion Institucional", 2],
+	["Cooperador Distrital De Desarrollo Financiero", 2],
+	["Comisionado Regional", 3],
+	["Asistente Regional De Programa de Jovenes", 3],
+	["Asistente Regional De Adultos en el Movimiento", 3],
+	["Asistente Regional De Operaciones", 3],
+	["Asistente Regional De Administración", 3],
+	["Asistente Regional De Comunicaciones", 3],
+	["Asistente Regional De Gestion Institucional", 3],
+	["Asistente Regional De Desarrollo Financiero", 3],
+	["Cooperador Regional De Programa de Jovenes", 3],
+	["Cooperador Regional De Adultos en el Movimiento", 3],
+	["Cooperador Regional De Operaciones", 3],
+	["Cooperador Regional De Administración", 3],
+	["Cooperador Regional De Comunicaciones", 3],
+	["Cooperador Regional De Gestion Institucional", 3],
+	["Cooperador Regional De Desarrollo Financiero", 3],
+	["Director Ejecutivo Nacional", 4],
+	["Director Nacional De Programa de Jovenes", 4],
+	["Director Nacional De Adultos en el Movimiento", 4],
+	["Director Nacional De Operaciones", 4],
+	["Director Nacional De Administraccion", 4],
+	["Director Nacional De Comunicaciones", 4],
+	["Director Nacional De Gestion Institucional", 4],
+	["Director Nacional De Desarrollo Financiero", 4],
+	["Coordinador Nacional De Programa de Jovenes", 4],
+	["Coordinador Nacional De Adultos en el Movimiento", 4],
+	["Coordinador Nacional De Operaciones", 4],
+	["Coordinador Nacional De Administraccion", 4],
+	["Coordinador Nacional De Comunicaciones", 4],
+	["Coordinador Nacional De Gestion Institucional", 4],
+	["Coordinador Nacional De Desarrollo Financiero", 4],
+	["Cooperador Nacional Programa de Jovenes", 4],
+	["Cooperador Nacional Adultos en el Movimiento", 4],
+	["Cooperador Nacional Operaciones", 4],
+	["Cooperador Nacional Administraccion", 4],
+	["Cooperador Nacional Comunicaciones", 4],
+	["Cooperador Nacional Gestion Institucional", 4],
+	["Cooperador Nacional Desarrollo Financiero", 4],
+	["Miembro del Consejo Consultivo Nacional", 4],
+	["Miembro de la Corte de Honor Nacional", 4],
+	["Vocal de la Corte de Honor Nacional", 4],
+	["Secretario de la Corte de Honor Nacional", 4],
+	["Presidente de la Corte de Honor Nacional", 4],
+	["Contralor Nacional", 4],
+	["Comisionado Internacional", 4],
+	["Consejero Nacional", 4],
+	["Tesorero Nacional", 4],
+	["Sub Tesorero Nacional", 4],
+	["Vice-Presidente y Sub-Jefe Scout Asociación de Scouts de Venezuela", 4],
+	["Presidente y Jefe Scout Asociación de Scouts de Venezuela", 4],
+	["superuser", 5]
+]
+
+unities_list = [
+	"Conductor de Grupo",
+	"Manada Masculina",
+	"Manada Femenina",
+	"Tropa Masculina",
+	"Tropa Femenina",
+	"Clan Masculino",
+	"Clan Femenino"
+]
+
+training_lev_list = [
+	"Sin Nivel",
+	"Nivel Básico",
+	"Nivel Intermedio en Manada",
+	"Nivel Intermedio en Tropa",
+	"Nivel Intermedio en Clan",
+	"Nivel Intermedio en Conductores de Grupo",
+	"Nivel Intermedio en Institucionales",
+	"Nivel Avanzado en Manada",
+	"Nivel Avanzado en Tropa",
+	"Nivel Avanzado en Clan",
+	"Nivel Avanzado en Conductores de Grupo",
+	"Nivel Avanzado en Institucionales",
+	"Nivel Básico de Capacitadores",
+	"Nivel Avanzado de Capacitadores",
+]
+
+training_work_list = [
+	"Curso Básico",
+	"Taller de Estrategias Educativas",
+	"Taller de Planificación y Programación",
+	"Taller Técnico en Manada (Ambientación)",
+	"Taller Técnico en Tropa (Campismo)",
+	"Taller Técnico en Clan (Campismo",
+	"Taller de Captación de Adultos",
+	"Curso Vivencial Intermedio en Manada",
+	"Curso Vivencial Intermedio en Tropa",
+	"Curso Vivencial Intermedio en Clan",
+	"Curso Intermedio en Cond. de Grupo e Inst.",
+	"Taller de Espiritualidad",
+	"Taller de Seguridad en Actividades Scout",
+	"Taller de Supervisión",
+	"Taller de Evaluación",
+	"Taller de Manejo de Conflictos",
+	"Taller LOPNA",
+	"Taller ONA",
+	"Curso Vivencial Avanzado en Unidades",
+	"Curso Avanzado en Cond. de Grupo Inst."
+]
+
 ocp_list.each do |desc|
 	Ocupation.create(description: desc)
 	p "Created #{Ocupation.count} Ocupations"
@@ -1752,10 +1904,45 @@ document_type_list.each do |desc, tk|
 	p "Created #{DocumentType.count} Document Types"
 end
 
+structure_lev_list.each do |desc|
+	StructureLevel.create(description: desc)
+	p "Created #{StructureLevel.count} Structure Levels"
+end
+
+charges_list.each do |desc, stlid|
+	Charge.create(description: desc, structure_level_id: stlid)
+	p "Created #{Charge.count} Charges"
+end
+
+unities_list.each do |desc|
+	Unity.create(description: desc)
+	p "Created #{Unity.count} Unities"
+end
+
+training_lev_list.each do |desc|
+	TrainingLevel.create(description: desc)
+	p "Created #{TrainingLevel.count} Training Levels"
+end
+
+training_work_list.each do |desc|
+	TrainingWorkshop.create(description: desc)
+	p "Created #{TrainingWorkshop.count} Training Workshops"
+end
+
+
+
+
+
+
+
+
+
+
 nationality_list.each do |desc|
 	Nationality.create(description: desc)
 	p "Created #{Nationality.count} Nationalities"
 end
+
 state_list.each do |desc|
 	State.create(description: desc)
 	p "Created #{State.count} States"
