@@ -22,6 +22,12 @@ ocp_list = [
 	"Matemático"
 ]
 
+p "  -> Ocupations: Manufacturing"
+ocp_list.each do |desc|
+	Ocupation.create(description: desc)
+end
+p "  ->   -> Created #{Ocupation.count} Ocupations"
+
 academic_lev_list = [
 	"none",
 	"Basic",
@@ -31,6 +37,12 @@ academic_lev_list = [
 	"Doctorate",
 	"PHD"
 ]
+
+p "  -> Academic Levels: Manufacturing"
+academic_lev_list.each do |desc|
+	AcademicLevel.create(description: desc)
+end
+p "  ->   -> Created #{AcademicLevel.count} Academic Levels"
 
 relationship_list = [
 	"none",
@@ -42,12 +54,24 @@ relationship_list = [
 	"Tutor Legal"
 ]
 
+p "  -> Relationships: Manufacturing"
+relationship_list.each do |desc|
+	Relationship.create(description: desc)
+end
+p "  ->   -> Created #{Relationship.count} Relationships"
+
 document_type_list = [
 	["Cédula Venezolana", "V-"],
 	["Cédula Extranjera", "E-"],
 	["Pasaporte", "P-"],
 	["Persona Juridica", "J-"]
 ]
+
+p "  -> Document Types: Manufacturing"
+document_type_list.each do |desc, tk|
+	DocumentType.create(description: desc, tok: tk)
+end
+p "  ->   -> Created #{DocumentType.count} Document Types"
 
 nationality_list = [
 	"VENEZOLANA",
@@ -225,6 +249,12 @@ nationality_list = [
 	"ESLOVAQUIA"
 ]
 
+p "  -> Nationalities: Manufacturing"
+nationality_list.each do |desc|
+	Nationality.create(description: desc)
+end
+p "  ->   -> Created #{Nationality.count} Nationalities"
+
 state_list = [
 	"Amazonas",
 	"Anzoátegui",
@@ -252,6 +282,12 @@ state_list = [
 	"Distrito Capital",
 	"Dependencias Federales"
 ]
+
+p "  -> States: Manufacturing"
+state_list.each do |desc|
+	State.create(description: desc)
+end
+p "  ->   -> Created #{State.count} States"
 
 municipality_list = [
 	[ 1, "Alto Orinoco" ],
@@ -590,6 +626,12 @@ municipality_list = [
 	[ 23, "Valmore Rodríguez" ],
 	[ 24, "Libertador" ]
 ]
+
+p "  -> Municipalities: Manufacturing"
+municipality_list.each do |id,desc|
+	Municipality.create(State_id: id, description: desc)
+end
+p "  ->   -> Created #{Municipality.count} Municipalities"
 
 parish_list = [
 	[ 1, "Alto Orinoco" ],
@@ -1732,8 +1774,11 @@ parish_list = [
 	[ 373, "Arnoldo Gabaldón" ]
 ]
 
-
-
+p "  -> Parishes: Manufacturing"
+parish_list.each do |id, desc|
+	Parish.create(Municipality_id: id,description: desc)
+end
+p "  ->   -> Created #{Parish.count} Parishes"
 
 structure_lev_list = [
 	"Grupo",
@@ -1742,6 +1787,12 @@ structure_lev_list = [
 	"Nacional",
 	"superuser",
 ]
+
+p "  -> Structure Levels: Manufacturing"
+structure_lev_list.each do |desc|
+	StructureLevel.create(description: desc)
+end
+p "  ->   -> Created #{StructureLevel.count} Structure Levels"
 
 charges_list = [
 	["Adulto Colaborador", 1],
@@ -1834,7 +1885,16 @@ charges_list = [
 	["superuser", 5]
 ]
 
+p "  -> Charges: Manufacturing"
+charges_list.each do |desc, stlid|
+	Charge.create(description: desc, structure_level_id: stlid)
+end
+p "  ->   -> Created #{Charge.count} Charges"
+
 unities_list = [
+	"Manada",
+	"Tropa",
+	"Clan",
 	"Conductor de Grupo",
 	"Manada Masculina",
 	"Manada Femenina",
@@ -1843,6 +1903,12 @@ unities_list = [
 	"Clan Masculino",
 	"Clan Femenino"
 ]
+
+p "  -> Unities: Manufacturing"
+unities_list.each do |desc|
+	Unity.create(description: desc)
+end
+p "  ->   -> Created #{Unity.count} Unities"
 
 training_lev_list = [
 	"Sin Nivel",
@@ -1860,6 +1926,12 @@ training_lev_list = [
 	"Nivel Básico de Capacitadores",
 	"Nivel Avanzado de Capacitadores",
 ]
+
+p "  -> Training Levels: Manufacturing"
+training_lev_list.each do |desc|
+	TrainingLevel.create(description: desc)
+end
+p "  ->   -> Created #{TrainingLevel.count} Training Levels"
 
 training_work_list = [
 	"Curso Básico",
@@ -1884,83 +1956,414 @@ training_work_list = [
 	"Curso Avanzado en Cond. de Grupo Inst."
 ]
 
-ocp_list.each do |desc|
-	Ocupation.create(description: desc)
-	p "Created #{Ocupation.count} Ocupations"
-end
-
-academic_lev_list.each do |desc|
-	AcademicLevel.create(description: desc)
-	p "Created #{AcademicLevel.count} Academic Levels"
-end
-
-relationship_list.each do |desc|
-	Relationship.create(description: desc)
-	p "Created #{Relationship.count} Relationships"
-end
-
-document_type_list.each do |desc, tk|
-	DocumentType.create(description: desc, tok: tk)
-	p "Created #{DocumentType.count} Document Types"
-end
-
-structure_lev_list.each do |desc|
-	StructureLevel.create(description: desc)
-	p "Created #{StructureLevel.count} Structure Levels"
-end
-
-charges_list.each do |desc, stlid|
-	Charge.create(description: desc, structure_level_id: stlid)
-	p "Created #{Charge.count} Charges"
-end
-
-unities_list.each do |desc|
-	Unity.create(description: desc)
-	p "Created #{Unity.count} Unities"
-end
-
-training_lev_list.each do |desc|
-	TrainingLevel.create(description: desc)
-	p "Created #{TrainingLevel.count} Training Levels"
-end
-
+p "  -> Training Works: Manufacturing"
 training_work_list.each do |desc|
 	TrainingWorkshop.create(description: desc)
-	p "Created #{TrainingWorkshop.count} Training Workshops"
 end
+p "  ->   -> Created #{TrainingWorkshop.count} Training Workshops"
 
+advances_list = [
+	[1, "Cachorro"],
+	[1, "Huella Fresca"],
+	[1, "Huella Alerta"],
+	[1, "Huella Ágil"],
+	[1, "Huella Libre"],
+	[1, "Lobo Saltarín"],
+	[2, "Novicio"],
+	[2, "Aventurero"],
+	[2, "Explorador"],
+	[2, "Pionero"],
+	[2, "Scout de Bolívar"],
+	[3, "Novato"],
+	[3, "Precursor"],
+	[3, "Expedicionario"],
+	[3, "Descubridor"],
+	[3, "Fundador"],
+	[3, "Rover Ciudadano"],
+]
 
-
-
-
-
-
-
-
-
-nationality_list.each do |desc|
-	Nationality.create(description: desc)
-	p "Created #{Nationality.count} Nationalities"
+p "  -> Advances: Manufacturing"
+advances_list.each do |idUnit, desc|
+	Advance.create(description: desc, unity_id: idUnit)
 end
+p "  ->   -> Created #{Advance.count} Advances"
 
-state_list.each do |desc|
-	State.create(description: desc)
-	p "Created #{State.count} States"
-end
+regions_list = [
+	"Región Cero",
+	"Anzoátegui",
+	"Aragua",
+	"Bolivar",
+	"Carabobo",
+	"Centro Llanos",
+	"Distrito Capital",
+	"Falcón",
+	"Lara",
+	"Merida",
+	"Metropolitana",
+	"Miranda",
+	"Nororiental",
+	"O.S.N.",
+	"Táchira",
+	"Zulia"
+]
 
-municipality_list.each do |id,desc|
-	Municipality.create(State_id: id, description: desc)
-	p "Created #{Municipality.count} Municipalities"
+p "  -> Regions: Manufacturing"
+regions_list.each do |desc|
+	Region.create(description: desc)
 end
+p "  ->   -> Created #{Region.count} Regions"
 
-parish_list.each do |id, desc|
-	Parish.create(Municipality_id: id,description: desc)
-	p "Created #{Parish.count} Parishes"
+districts_list = [
+	[1, "DISTRITO CERO"],
+	[2, "BARCELONA"],
+	[2, "GUANIPA"],
+	[2, "LECHERIA"],
+	[2, "PUERTO LA CRUZ"],
+	[2, "ZONA DE EXPANSION"],
+	[3, "HENRI PITTIER"],
+	[3, "JOSE FELIX RIBAS"],
+	[3, "MANUEL ATANASIO GIRARDOT"],
+	[3, "SANTIAGO MARIÑO"],
+	[3, "SUCRE ZAMORA"],
+	[4, "CARONI"],
+	[4, "ORINOCO"],
+	[5, "NAGUANAGUA"],
+	[5, "PUERTO CABELLO"],
+	[5, "SAN DIEGO"],
+	[5, "VALENCIA NORTE"],
+	[5, "VALENCIA SUR"],
+	[5, "ZONA DE EXPANSION"],
+	[6, "ACARIGUA"],
+	[6, "GUANARE"],
+	[6, "GUARICO"],
+	[6, "YARACUY"],
+	[6, "ZONA DE EXPANSION"],
+	[7, "23 DE ENERO"],
+	[7, "AVILA"],
+	[7, "CARICUAO"],
+	[7, "JOSE ANTONIO PAEZ"],
+	[7, "LOS PROCERES"],
+	[7, "MARISCAL SUCRE"],
+	[7, "SANTIAGO DE LEON"],
+	[8, "MANAURE"],
+	[8, "PARAGUANA"],
+	[9, "ANDRES ELOY BLANCO"],
+	[9, "CATEDRAL"],
+	[9, "CREPUSCULAR"],
+	[9, "PALAVECINO"],
+	[10, "ALBERTO ADRIANI"],
+	[10, "ANDRES BELLO"],
+	[10, "CARI"],
+	[10, "MOCOTIES"],
+	[10, "TULIO FEBRES CORDERO"],
+	[11, "BARUTA"],
+	[11, "CHACAO"],
+	[11, "SUCRE NORTE"],
+	[11, "SUCRE SUR"],
+	[12, "GUAICAIPURO"],
+	[12, "GUARENAS GUATIRE"],
+	[12, "LOS SALIAS"],
+	[12, "VALLES DEL TUY"],
+	[13, "CUMANA"],
+	[13, "INSULAR"],
+	[14, "APURE"],
+	[14, "GUARAPICHE"],
+	[14, "TRUJILLO"],
+	[14, "VARGAS"],
+	[14, "VARYNÁ"],
+	[15, "FRONTERA"],
+	[15, "LUIS AMIGO"],
+	[15, "PARQUE NACIONAL CHORRO EL INDIO"],
+	[15, "PARQUE NACIONAL EL TAMA"],
+	[15, "RIO TORBES"],
+	[15, "TRASANDINO"],
+	[16, "COQUIVACOA"],
+	[16, "FRANCISCO POLANCO - PERIJA"],
+	[16, "PEDRO HENRIQUEZ AMADO"],
+	[16, "SAMUEL MARTINEZ"],
+	[16, "SAN FRANCISCO"],
+	[16, "ZULIA ORIENTAL"]
+]
+
+p "  -> District: Manufacturing"
+districts_list.each do |idReg, desc|
+	District.create(description: desc, region_id: idReg)
 end
+p "  ->   -> Created #{District.count} District"
+
+groups_list = [
+	[1, "GRUPO SCOUT CERO", 1],
+	[2, "ARAUCA", 1],
+	[2, "BROWNSEA", 1],
+	[2, "DON BOSCO 17", 1],
+	[2, "FRANCISCO DE MIRANDA", 1],
+	[2, "JOSE ANTONIO ANZOATEGUI", 1],
+	[3, "ARAGUANEY", 1],
+	[3, "FRAY FERNANDO JIMENEZ", 1],
+	[3, "GENESIS", 1],
+	[3, "SAN MATEO - EL TIGRE", 1],
+	[4, "CIVO", 1],
+	[4, "DON BOSCO VII", 1],
+	[5, "ANDRES ELOY BLANCO", 1],
+	[5, "PADRE JOSE MARIA VELAZ", 1],
+	[5, "PADRE LUIS EDUARDO GALLEGOS", 1],
+	[6, "UNARE", 1],
+	[7, "CIUDAD JARDIN", 1],
+	[7, "HUMBOLDT", 1],
+	[7, "JOSE SMITH", 1],
+	[7, "LIBERTADOR", 1],
+	[7, "RANCHO GRANDE", 1],
+	[8, "A.L.A.S", 1],
+	[8, "GUSTAVO JOSE VOLLMER H.", 1],
+	[8, "MORONI", 1],
+	[9, "DON BOSCO XII", 1],
+	[9, "GRAN MARISCAL DE AYACUCHO", 1],
+	[9, "SAN BENITO", 1],
+	[9, "WEI TEPUI", 1],
+	[10, "DON BOSCO", 1],
+	[10, "FENIX", 1],
+	[10, "GENERAL SANTIAGO MARIÑO", 1],
+	[10, "INDEPENDENCIA", 1],
+	[10, "ORION", 1],
+	[11, "AGUSTÍN CODAZZI", 1],
+	[11, "ANTONIO JOSE DE SUCRE", 1],
+	[11, "EZEQUIEL ZAMORA", 1],
+	[12, "KENYA", 1],
+	[12, "KIM", 1],
+	[12, "MORONI", 1],
+	[12, "RORAIMA", 1],
+	[12, "SOROCAIMA", 1],
+	[13, "DON BOSCO 3", 1],
+	[13, "JOSE MARIA VELAZ", 1],
+	[13, "SAN FRANCISCO DE ASIS", 1],
+	[13, "SIMON BOLIVAR", 1],
+	[13, "TEREPAIMA", 1],
+	[14, "EXPLORADORES DE BROWNSEA", 1],
+	[14, "INAGUANAGOA", 1],
+	[14, "NUESTRA SEÑORA DE BEGOÑA", 1],
+	[14, "PIONEROS DE CARABOBO", 1],
+	[15, "LA SALLE BALOCHE", 1],
+	[15, "LA SALLE SAN JOSE", 1],
+	[15, "SAN JORGE", 1],
+	[16, "LIBERTADOR", 1],
+	[16, "SAN DIEGO DE ALCALA", 1],
+	[17, "ACUARIUS", 1],
+	[17, "BATALLA DE CARABOBO", 1],
+	[17, "CASUPO", 1],
+	[17, "CONQUISTADORES DE CARABOBO", 1],
+	[17, "JUPITER", 1],
+	[17, "LA SALLE GUAPARO", 1],
+	[18, "ALI PRIMERA", 1],
+	[18, "BADEN POWELL", 1],
+	[18, "CRUX", 1],
+	[18, "LA SALLE HIGINIO PEDRO", 1],
+	[18, "PROTINAL VALENCIA", 1],
+	[19, "PADRE JORGE DEVOS", 1],
+	[20, "JOHN STELZER", 1],
+	[20, "TAMANACO", 1],
+	[21, "GUANAGUANARE", 1],
+	[22, "INDEPENDENCIA", 1],
+	[22, "LOS MORROS", 1],
+	[22, "TUCUNUMA", 1],
+	[23, "ELIGIO VARGAS OCHOA", 1],
+	[23, "NIVAR", 1],
+	[23, "ROLAND ERASMUS PHILIPPS", 1],
+	[24, "ACECHADORES DE MAFEKING", 1],
+	[24, "GENAZARET", 1],
+	[25, "CENTAUROS DE APURE", 1],
+	[26, "CECILIO ACOSTA", 1],
+	[26, "DINIZULU", 1],
+	[26, "HORIZONTES", 1],
+	[26, "MORICHE", 1],
+	[26, "SAN FRANCISCO DE ASIS", 1],
+	[27, "CRISTOBAL MENDOZA", 1],
+	[27, "ESTOVACUY", 1],
+	[27, "FLOR DE LIS", 1],
+	[27, "SANTA TERESITA", 1],
+	[27, "VIRGEN DE LA PAZ", 1],
+	[28, "GUERREROS DE SAN MIGUEL ARCÁNGEL", 1],
+	[29, "EL MARQUÉS", 1],
+	[29, "RAMON IGNACIO MENDEZ", 1],
+	[29, "RENACER", 1],
+	[30, "ASUNCION", 1],
+	[30, "JAEZULU", 1],
+	[30, "SAN PEDRO CLAVER", 1],
+	[31, "ARISTIDES ROJAS", 1],
+	[31, "BICENTENARIO", 1],
+	[31, "DON BOSCO 21", 1],
+	[31, "HENRI PITTIER", 1],
+	[31, "LA SALLE LA COLINA", 1],
+	[31, "NEPTUNO", 1],
+	[31, "PARAMACAY", 1],
+	[32, "ATANASIO GIRARDOT", 1],
+	[32, "CLAUDIO FELICIANO", 1],
+	[32, "SAN AGUSTIN", 1],
+	[32, "SAN BENITO 20", 1],
+	[32, "SAN BENITO XIV", 1],
+	[33, "DON BOSCO", 1],
+	[33, "LAS AMERICAS", 1],
+	[34, "FRANCISCO DE MIRANDA", 1],
+	[34, "RORAIMA", 1],
+	[35, "ALDEBARAN", 1],
+	[35, "COMETA", 1],
+	[35, "SAN JOSE DE CALASANZ 38", 1],
+	[35, "SAN JOSE DE CALASANZ 40", 1],
+	[36, "CATATUMBO", 1],
+	[36, "LA SALLE TIENDA HONDA", 1],
+	[36, "SAN BENITO 18", 1],
+	[36, "SIMON BOLIVAR ", 1],
+	[37, "DOMINGO SAVIO", 1],
+	[37, "ENMANUEL", 1],
+	[37, "FRANCISCO DE MIRANDA", 1],
+	[38, "MATACAN", 1],
+	[38, "MONTECANO", 1],
+	[38, "NAZARET", 1],
+	[38, "PARAGUANA", 1],
+	[39, "GUERREROS DE YACAMBU", 1],
+	[40, "CLARET", 1],
+	[40, "GENERAL JACINTO LARA", 1],
+	[40, "LA SALLE", 1],
+	[40, "NUEVA SEGOVIA", 1],
+	[40, "SIMON BOLIVAR", 1],
+	[41, "CARLOS LAURER", 1],
+	[41, "HERMANO JUAN", 1],
+	[41, "MARCOS BRITO", 1],
+	[41, "NUESTRA SEÑORA DEL CARMEN", 1],
+	[42, "TEREPAIMA", 1],
+	[43, "ALBERTO ADRIANI", 1],
+	[43, "PALMARITO - LINTERNAS VERDES", 1],
+	[43, "SANTA BARBARA DEL ZULIA", 1],
+	[44, "JOSE FELIX RIBAS", 1],
+	[44, "LA SALLE", 1],
+	[44, "ORION LXXII", 1],
+	[44, "SANTA BARBARA", 1],
+	[44, "SANTIAGO DE LOS CABALLEROS", 1],
+	[44, "UGO ANZIL", 1],
+	[45, "GUAKES", 1],
+	[45, "MISTAJA", 1],
+	[45, "PIONEROS DE MERIDA", 1],
+	[46, "INACHU", 1],
+	[47, "DR. PEDRO RINCON GUTIERREZ - ULA", 1],
+	[47, "JUAN FÉLIX SANCHEZ", 1],
+	[47, "LIBERTADOR", 1],
+	[47, "ZUHE", 1],
+	[48, "AUTANA", 1],
+	[48, "DIPAHO", 1],
+	[48, "KURENAN", 1],
+	[48, "SANTA ROSALIA DE PALERMO", 1],
+	[48, "SEONEE", 1],
+	[49, "FENIX", 1],
+	[49, "PLEYADES", 1],
+	[49, "SANTO TOMAS DE AQUINO", 1],
+	[49, "TIUNA", 1],
+	[50, "CLARET", 1],
+	[50, "DOMINGO SAVIO", 1],
+	[50, "DON BOSCO", 1],
+	[50, "MACONDO", 1],
+	[50, "SAN CAYETANO", 1],
+	[51, "AMAZONAS", 1],
+	[51, "AMAZONIA", 1],
+	[51, "CACIQUE TAMANACO", 1],
+	[51, "EMIRO BORDEN", 1],
+	[51, "MAFEKING 100", 1],
+	[51, "SIGUANOI", 1],
+	[51, "WARAIRAREPANO", 1],
+	[52, "DON BOSCO", 1],
+	[52, "LOS NUEVOS TEQUES", 1],
+	[52, "PARAMACONI", 1],
+	[53, "ALFA", 1],
+	[53, "ALIANZA", 1],
+	[53, "EPSILON", 1],
+	[53, "GAMMA", 1],
+	[53, "MAFEKING100", 1],
+	[53, "ORION 84", 1],
+	[54, "CAYAURIMA", 1],
+	[54, "MIRANDA", 1],
+	[55, "CACIQUE CUE", 1],
+	[55, "RAMON OCANDO PEREZ", 1],
+	[56, "ANDRES ELOY BLANCO", 1],
+	[56, "ANTONIO JOSE DE SUCRE", 1],
+	[56, "DR. JULIAN SAUD", 1],
+	[56, "G/J FRANCISCO MEJIA", 1],
+	[56, "SAN FRANCISCO", 1],
+	[57, "ALEJANDRO DE HUMBOLDT", 1],
+	[57, "CHARAIMA", 1],
+	[57, "JUAN PABLO II", 1],
+	[57, "MAFEKING", 1],
+	[57, "MAMPATARE", 1],
+	[57, "SAN JOSE DE PARAGUACHI", 1],
+	[58, "CONQUISTADORES ANDINOS", 1],
+	[58, "PEDRO MARIA UREÑA", 1],
+	[58, "SAN ANTONIO DE PADUA", 1],
+	[59, "ASOGATA", 1],
+	[59, "BROWNSEA", 1],
+	[59, "CAPROU", 1],
+	[59, "EDGAR ROA", 1],
+	[59, "FUNTHA SIND", 1],
+	[60, "BADEN POWELL XVIII", 1],
+	[60, "CAPITAN MORONI", 1],
+	[60, "COMUNEROS DEL TACHIRA", 1],
+	[60, "FRANKLIN EDUARDO VILLAMIZAR VELAZCO", 1],
+	[60, "MAFEKING", 1],
+	[60, "SAN JORGE", 1],
+	[61, "CIPRIANO CASTRO", 1],
+	[61, "CRUZ DEL SUR", 1],
+	[61, "GISA", 1],
+	[61, "ROBERTO RAMIREZ G.", 1],
+	[62, "ANDRES BELLO", 1],
+	[62, "BADEN POWELL G.S DON BOSCO", 1],
+	[62, "GUASIMOS", 1],
+	[63, "JOSE MARIA VARGAS", 1],
+	[63, "MEDARDA PIÑERO", 1],
+	[63, "PUEBLO HONDO", 1],
+	[63, "SAN JOSÉ DE BOLÍVAR", 1],
+	[63, "SANTO CRISTO DE LA GRITA", 1],
+	[64, "BRAVOS DE PAEZ", 1],
+	[64, "INDEPENDENCIA", 1],
+	[64, "LA TRINIDAD", 1],
+	[64, "LUCILA PALACIOS", 1],
+	[64, "PAOLA PRINCE", 1],
+	[64, "SAN MARTIN DE PORRES", 1],
+	[64, "SAN RAFAEL", 1],
+	[65, "DON JUAN DE CHOURIO E ITURBIDE", 1],
+	[65, "DR. NORIEGA TRIGO", 1],
+	[65, "MARANATHA", 1],
+	[66, "LOS APAMATES", 1],
+	[66, "SAN JORGE", 1],
+	[66, "SAN SEBASTIAN", 1],
+	[66, "SAN SIMON DE BELLAS ARTES", 1],
+	[67, "CAPITAN MORONI", 1],
+	[67, "L.U.Z", 1],
+	[67, "LA VICTORIA", 1],
+	[67, "LOS OLIVOS", 1],
+	[67, "RAFAEL URDANETA", 1],
+	[67, "SAN PABLO", 1],
+	[68, "ADRIEL ENRIQUE", 1],
+	[68, "CRISTO REY", 1],
+	[68, "MANAURE", 1],
+	[68, "MARISCAL SUCRE", 1],
+	[68, "VENEZUELA", 1],
+	[69, "ALONSO DE OJEDA", 1],
+	[69, "COPAIBA", 1],
+	[69, "OMEGA", 1],
+	[69, "PARAUTE", 1],
+	[69, "SANTA RITA", 1]
+]
+
+p "  -> Scout Group: Manufacturing"
+groups_list.each do |idDist, desc, parishId|
+	Group.create(description: desc, district_id: idDist, parish_id: Random.rand(2...parish_list.length) )
+	
+end
+p "  ->   -> Created #{Group.count} Scout Groups"
 
 gender_list = ['M','F']
 
-50.times do |index|
+p "  -> People: Manufacturing
+
+"
+
+100.times do |index|
 
 	first_name1 = Faker::Name.first_name
 	first_name2 = Faker::Name.first_name
@@ -1993,13 +2396,53 @@ gender_list = ['M','F']
 				  promise_day: Faker::Time.between(70.years.ago, 1.week.ago),
 				  parish_id: Random.rand(1...parish_list.length) )
 
-	adt = Adult.create( person_id: pr1.id )
 
-	Registry.create( adult_id: adt.id,
-		 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago))
+	flag = Faker::Boolean.boolean;
+	
+	prc1 = 0;
+		if flag
+			if SprPerson.count>1
+				prc1 = ProgramReceptor.create(person_id: pr1.id,
+									      spr_person_id: Random.rand(1...SprPerson.count))
+				Registry.create( program_receptor_id: prc1.id,
+				 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago),
+				 			 group_id:  Random.rand(2...groups_list.length),
+							 unity_id: Random.rand(1...unities_list.length),
+							 charge_id: Random.rand(1...23)
+				 			 )		
+			else
+				Registry.create( person_id: pr1.id,
+			 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago),
+			 			 group_id:  Random.rand(2...groups_list.length),
+						 unity_id: Random.rand(1...unities_list.length),
+						 charge_id: Random.rand(1...23)
+			 			 )	
+			end
+			
 
-	p "Created #{SprPerson.count} Instances of People..."
+		else
+			Registry.create( person_id: pr1.id,
+			 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago),
+			 			 group_id:  Random.rand(2...groups_list.length),
+						 unity_id: Random.rand(1...unities_list.length),
+						 charge_id: Random.rand(1...23)
+			 			 )
+		end
+
+
+	
+
+	
 end
 
+p "  -> Created #{SprPerson.count} Instances of People..."
+p "  ->   -> #{Person.count - ProgramReceptor.count} Instances of Scout Adults..."
+p "  ->   -> #{ProgramReceptor.count} Instances of Program Receptors..."
+p "Created #{Registry.count} Registries..."
 
-p "that's all... yay! :)"
+
+
+p "
+
+
+.................that's all... yay! :)"

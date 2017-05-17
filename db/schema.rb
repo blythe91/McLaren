@@ -10,19 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515024852) do
+ActiveRecord::Schema.define(version: 20170515225926) do
 
   create_table "academic_levels", force: :cascade do |t|
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "adults", force: :cascade do |t|
-    t.integer  "person_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["person_id"], name: "index_adults_on_person_id"
   end
 
   create_table "advances", force: :cascade do |t|
@@ -96,14 +89,23 @@ ActiveRecord::Schema.define(version: 20170515024852) do
 
   create_table "people", force: :cascade do |t|
     t.integer  "dnis"
-    t.date     "birth"
     t.date     "promise_day"
+    t.date     "birth"
     t.integer  "spr_person_id"
     t.integer  "parish_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["parish_id"], name: "index_people_on_parish_id"
     t.index ["spr_person_id"], name: "index_people_on_spr_person_id"
+  end
+
+  create_table "program_receptors", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "spr_person_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["person_id"], name: "index_program_receptors_on_person_id"
+    t.index ["spr_person_id"], name: "index_program_receptors_on_spr_person_id"
   end
 
   create_table "regions", force: :cascade do |t|
@@ -114,10 +116,18 @@ ActiveRecord::Schema.define(version: 20170515024852) do
 
   create_table "registries", force: :cascade do |t|
     t.date     "registry_date"
-    t.integer  "adult_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["adult_id"], name: "index_registries_on_adult_id"
+    t.integer  "group_id"
+    t.integer  "charge_id"
+    t.integer  "unity_id"
+    t.integer  "program_receptor_id"
+    t.integer  "person_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["charge_id"], name: "index_registries_on_charge_id"
+    t.index ["group_id"], name: "index_registries_on_group_id"
+    t.index ["person_id"], name: "index_registries_on_person_id"
+    t.index ["program_receptor_id"], name: "index_registries_on_program_receptor_id"
+    t.index ["unity_id"], name: "index_registries_on_unity_id"
   end
 
   create_table "relationships", force: :cascade do |t|

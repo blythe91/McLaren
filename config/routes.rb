@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  resources :people
+  resources :registries
+  resources :program_receptors
   get 'welcome/index'
 
   resources :training_workshops
-  resources :people
   resources :spr_people
-  resources :registries
   resources :advances
   resources :charges
   resources :groups
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
   resources :specialties
   resources :structure_levels
   resources :training_levels
-  resources :adults
   resources :parishes
   resources :municipalities
   resources :states

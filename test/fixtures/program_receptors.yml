@@ -2,6 +2,8 @@
 
 one:
   person: one
+  spr_person: one
 
 two:
   person: two
+  spr_person: two

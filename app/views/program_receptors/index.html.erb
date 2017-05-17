@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Program Receptors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Spr person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @program_receptors.each do |program_receptor| %>
+      <tr>
+        <td><%= program_receptor.person %></td>
+        <td><%= program_receptor.spr_person %></td>
+        <td><%= link_to 'Show', program_receptor %></td>
+        <td><%= link_to 'Edit', edit_program_receptor_path(program_receptor) %></td>
+        <td><%= link_to 'Destroy', program_receptor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Program Receptor', new_program_receptor_path %>

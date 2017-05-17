@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  registry_date: 2017-05-11
-  adult: one
+  registry_date: 2017-05-15
+  group: one
+  charge: one
+  unity: one
+  program_receptor: one
+  person: one
 
 two:
-  registry_date: 2017-05-11
-  adult: two
+  registry_date: 2017-05-15
+  group: two
+  charge: two
+  unity: two
+  program_receptor: two
+  person: two

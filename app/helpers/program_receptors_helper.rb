@@ -1,0 +1,2 @@
+module ProgramReceptorsHelper
+end

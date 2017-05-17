@@ -5,10 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>dnis</th>
-      <th>Document</th>
-      <th>Full Name</th>
       <th>Registry date</th>
+      <th>Group</th>
+      <th>Charge</th>
+      <th>Unity</th>
+      <th>Program receptor</th>
+      <th>Person</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +18,12 @@
   <tbody>
     <% @registries.each do |registry| %>
       <tr>
-        <td><%= registry.adult.dnis %></td>
-        <td><%= registry.adult.id_document %></td>
-        <td><%= registry.adult.full_name %></td>
         <td><%= registry.registry_date %></td>
+        <td><%= registry.group %></td>
+        <td><%= registry.charge %></td>
+        <td><%= registry.unity %></td>
+        <td><%= registry.program_receptor %></td>
+        <td><%= registry.person %></td>
         <td><%= link_to 'Show', registry %></td>
         <td><%= link_to 'Edit', edit_registry_path(registry) %></td>
         <td><%= link_to 'Destroy', registry, method: :delete, data: { confirm: 'Are you sure?' } %></td>

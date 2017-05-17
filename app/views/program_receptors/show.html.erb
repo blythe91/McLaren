@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @program_receptor.person %>
+</p>
+
+<p>
+  <strong>Spr person:</strong>
+  <%= @program_receptor.spr_person %>
+</p>
+
+<%= link_to 'Edit', edit_program_receptor_path(@program_receptor) %> |
+<%= link_to 'Back', program_receptors_path %>

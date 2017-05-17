@@ -7,6 +7,9 @@ class PeopleController < ApplicationController
     @people = Person.all
   end
 
+
+  
+
   # GET /people/1
   # GET /people/1.json
   def show
@@ -69,6 +72,6 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:dnis, :birth, :promise_day, :spr_person_id, :parish_id)
+      params.require(:person).permit(:dnis, :promise_day, :birth, :spr_person_id, :parish_id)
     end
 end

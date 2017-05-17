@@ -1,0 +1,27 @@
+<%= form_for(program_receptor) do |f| %>
+  <% if program_receptor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(program_receptor.errors.count, "error") %> prohibited this program_receptor from being saved:</h2>
+
+      <ul>
+      <% program_receptor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :person_id %>
+    <%= f.text_field :person_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :spr_person_id %>
+    <%= f.text_field :spr_person_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

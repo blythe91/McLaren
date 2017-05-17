@@ -6,8 +6,9 @@
   <thead>
     <tr>
       <th>Dnis</th>
-      <th>Documento</th>
-      <th>Nombre</th>
+      <th>Promise day</th>
+      <th>Birth</th>
+      <th>Spr person</th>
       <th>Parish</th>
       <th colspan="3"></th>
     </tr>
@@ -17,8 +18,9 @@
     <% @people.each do |person| %>
       <tr>
         <td><%= person.dnis %></td>
-        <td><%= person.spr_person.id_document %></td>
-        <td><%= person.full_name %></td>
+        <td><%= person.promise_day %></td>
+        <td><%= person.birth %></td>
+        <td><%= person.spr_person %></td>
         <td><%= person.parish %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
