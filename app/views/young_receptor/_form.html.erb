@@ -1,0 +1,151 @@
+<%= form_for(spr_person) do |f| %>
+  <% if spr_person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(spr_person.errors.count, "error") %> prohibited this spr_person from being saved:</h2>
+
+      <ul>
+      <% spr_person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.collection_select :document_type_id, DocumentType.all, :id, :tok %>
+    <%= f.label :document_type_id %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.text_field :document, pattern: "[0-9]*", maxlength: "12", required:"required", title: "21786123 (Ej)" %>
+    <%= f.label :document %>
+  </div>
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.select :gender, [['Masculino', 'M'], ['Femenino', 'F']] %>
+    <%= f.label :gender %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.check_box :asv_member, type: "checkbox"%>
+    <%= f.label :asv_member %>
+    <%= f.check_box :representative, type: "checkbox"%>
+    <%= f.label :representative %>
+  </div>
+
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.text_field :first_name, required:"required" %>
+    <%= f.label :first_name %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.text_field :second_name %>
+    <%= f.label :second_name %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.text_field :first_last_name, required:"required" %>
+    <%= f.label :first_last_name %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.text_field :second_last_name %>
+    <%= f.label :second_last_name %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.collection_select :ocupation_id, Ocupation.all, :id, :description %>
+    <%= f.label :ocupation_id %>
+    
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.collection_select :nationality_id, Nationality.all, :id, :description %>
+    <%= f.label :nationality_id %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.collection_select :academic_level_id, AcademicLevel.all, :id, :description %>
+    <%= f.label :academic_level_id %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.collection_select :relationship_id, Relationship.all, :id, :description %>
+    <%= f.label :relationship_id %>
+  </div>
+
+  
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.text_field :mobile_phone, pattern: "[0-9]{4}[-][0-9]{7}", maxlength: "12", title: "0414-1234567" %>
+    <%= f.label :mobile_phone %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.text_field :phone, pattern: "[0-9]{4}[-][0-9]{7}", title: "0414-1234567", maxlength: "12", title: "0276-1234567", required:"required" %>
+    <%= f.label :phone %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.email_field :main_email, class: "validate", required:"required" %>
+    <%= f.label :main_email, :"data-error" => "Correo Electrónico Inválido", :"data-success" => "Correo Electrónico Válido" %>
+  </div>
+
+  <div class="campo input-field col l3 m6 s12">
+    <%= f.email_field :second_email, class: "validate" %>
+    <%= f.label :second_email, :"data-error" => "Correo Electrónico Inválido", :"data-success" => "Correo Electrónico Válido" %>
+  </div>
+
+  <div class="campo input-field col s12">
+    <%= f.text_area :address, class: "materialize-textarea", :maxlength => "150", :"data-length" => "150", required:"required" %>
+    <%= f.label :address %>
+  </div>
+
+  <fieldset class="col s12">
+    <legend>Datos Scout</legend>
+
+      <%= f.fields_for :people do |var| %>
+
+        <div class="campo input-field col l3 m6 s12">
+          <%= var.text_field :dnis, pattern: "[0-9]*", maxlength: "6", required:"required", title: "123456 (Ej)" %>
+          <%= var.label :dnis %>
+        </div>
+        <div class="campo col l3 m6 s12">
+          <%= var.label :birth %>
+          <%= var.text_field :birth, required:"required", type: "date", class: "datepicker"%>
+        </div>
+
+        <div class="campo col l3 m6 s12">
+          <%= var.label :promise_day %>
+          <%= var.text_field :promise_day, required:"required", type: "date", class: "datepicker"%>
+        </div>
+        <div class="campo input-field col l3 m6 s12">
+          <%= var.collection_select :parish_id, Parish.all, :id, :description %>
+          <%= var.label :parish_id %>
+        </div>
+      <% end %>
+
+  </fieldset>
+
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+      Materialize.updateTextFields();
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 150 // Creates a dropdown of 15 years to control year
+      });
+    });
+
+    
+
+    
+  </script>
+
+</div>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

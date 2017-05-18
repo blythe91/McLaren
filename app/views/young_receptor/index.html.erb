@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Spr People</h1>
+<h1>young</h1>
 <%= link_to 'New Spr Person', new_spr_person_path, :class => "waves-effect waves-teal btn-flat" %>
 
 <%= link_to 'Receptor', recep_index_spr_people_path, :class => "waves-effect waves-teal btn-flat" %>
-<h5>Personas Registradas: <%= SprPerson.select("*").count%></h5>
-  
 <table>
   <thead>
     <tr>
-      <th>Document</th>
-      <th>Full name</th>
+      <th>Document</th>      
+      <th>First name</th>
+      <th>Second name</th>
+      <th>First last name</th>
+      <th>Second last name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @spr_people.each do |spr_person| %>
-
-
       <tr>
         <td><%= spr_person.id_document %></td>
-        <td><%= spr_person.full_name %> </td>
+        <td><%= spr_person.first_name %></td>
+        <td><%= spr_person.second_name %></td>
+        <td><%= spr_person.first_last_name %></td>
+        <td><%= spr_person.second_last_name %></td>        
         <td><%= link_to 'Show', spr_person %></td>
         <td><%= link_to 'Edit', edit_spr_person_path(spr_person) %></td>
         <td><%= link_to 'Destroy', spr_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -5,9 +5,10 @@ class ProgramReceptor < ApplicationRecord
   has_many :registries, dependent: :destroy
 
 
-  def full_name
-  	person.full_name
+  def to_s
+    person
   end
+
 
   def id_document
   	person.id_document

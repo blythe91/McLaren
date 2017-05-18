@@ -5,16 +5,16 @@ class Registry < ApplicationRecord
   belongs_to :program_receptor
   belongs_to :person
 
-  def full_name
-  	person.full_name
+  def full_name_recep
+  	program_receptor
   end
 
   def id_document
-  	person.id_document
+  	self.person.id_document
   end
 
   def dnis
-  	person.dnis
+  	self.person.dnis
   end
 
   def scout_group

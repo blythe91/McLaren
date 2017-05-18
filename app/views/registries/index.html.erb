@@ -19,10 +19,10 @@
     <% @registries.each do |registry| %>
       <tr>
         <td><%= registry.registry_date %></td>
-        <td><%= registry.group %></td>
-        <td><%= registry.charge %></td>
-        <td><%= registry.unity %></td>
-        <td><%= registry.program_receptor %></td>
+        <td><%= registry.scout_group %></td>
+        <td><%= registry.charge.to_s %></td>
+        <td><%= registry.unity.to_s %></td>
+        <td><%= registry.full_name_recep %></td>
         <td><%= registry.person %></td>
         <td><%= link_to 'Show', registry %></td>
         <td><%= link_to 'Edit', edit_registry_path(registry) %></td>

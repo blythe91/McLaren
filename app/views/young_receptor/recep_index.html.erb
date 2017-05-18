@@ -7,7 +7,8 @@
 <table>
   <thead>
     <tr>
-      <th>Document</th>      
+      <th>Document</th>
+      <th>DNIS</th>
       <th>First name</th>
       <th>Second name</th>
       <th>First last name</th>
@@ -19,11 +20,9 @@
   <tbody>
     <% @spr_people.each do |spr_person| %>
       <tr>
-        <td><%= spr_person.document_type.to_s+" "+spr_person.document %></td>
-        <td><%= spr_person.first_name %></td>
-        <td><%= spr_person.second_name %></td>
-        <td><%= spr_person.first_last_name %></td>
-        <td><%= spr_person.second_last_name %></td>
+        <td><%= spr_person.id_document %></td>
+        <td><%= spr_person.dnis %></td>
+        <td><%= spr_person.full_name  %></td>
         <td><%= link_to 'Show', spr_person %></td>
         <td><%= link_to 'Edit', edit_spr_person_path(spr_person) %></td>
         <td><%= link_to 'Destroy', spr_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>

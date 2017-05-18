@@ -2405,6 +2405,7 @@ p "  -> People: Manufacturing
 				prc1 = ProgramReceptor.create(person_id: pr1.id,
 									      spr_person_id: Random.rand(1...SprPerson.count))
 				Registry.create( program_receptor_id: prc1.id,
+							 person_id: 0,
 				 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago),
 				 			 group_id:  Random.rand(2...groups_list.length),
 							 unity_id: Random.rand(1...unities_list.length),
@@ -2412,16 +2413,18 @@ p "  -> People: Manufacturing
 				 			 )		
 			else
 				Registry.create( person_id: pr1.id,
+						 program_receptor_id: 0,
 			 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago),
 			 			 group_id:  Random.rand(2...groups_list.length),
 						 unity_id: Random.rand(1...unities_list.length),
 						 charge_id: Random.rand(1...23)
-			 			 )	
+			 			 )
 			end
 			
 
 		else
 			Registry.create( person_id: pr1.id,
+						 program_receptor_id: 0,
 			 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago),
 			 			 group_id:  Random.rand(2...groups_list.length),
 						 unity_id: Random.rand(1...unities_list.length),

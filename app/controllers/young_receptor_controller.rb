@@ -1,11 +1,10 @@
-class SprPeopleController < ApplicationController
-  before_action :set_spr_person, only: [:show, :edit, :update, :destroy]
+class YoungReceptorController < ApplicationController
+	 before_action :set_spr_person, only: [:show, :edit, :update, :destroy]
 
   # GET /spr_people
   # GET /spr_people.json
   def index
     @spr_people = SprPerson.select("*")
-    
   end
 
   def recep_index

@@ -10,7 +10,11 @@ class SprPerson < ApplicationRecord
   accepts_nested_attributes_for :people
 
   def full_name
-  	first_name+" "+second_name+" "+first_last_name+" "+second_last_name
+    first_name+" "+second_name+" "+first_last_name+" "+second_last_name
+  end
+
+  def to_s
+    first_name+" "+second_name+" "+first_last_name+" "+second_last_name
   end
 
   def id_document
