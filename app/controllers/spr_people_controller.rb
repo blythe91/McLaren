@@ -7,11 +7,16 @@ class SprPeopleController < ApplicationController
     @spr_people = SprPerson.select("*")
   end
 
+  def recep_index
+    @spr_people = SprPerson.select("*")
+  end
   # GET /spr_people/1
   # GET /spr_people/1.json
   def show
 
   end
+
+  
 
   # GET /spr_people/new
   def new

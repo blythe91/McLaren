@@ -5,7 +5,17 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :training_workshops
-  resources :spr_people
+
+  resources :spr_people do
+    collection do
+      get :recep_index
+    end
+  end
+
+  
+    
+
+
   resources :advances
   resources :charges
   resources :groups

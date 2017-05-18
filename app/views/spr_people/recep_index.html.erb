@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Spr People</h1>
+<h1>Receptores de Programa</h1>
 <%= link_to 'New Spr Person', new_spr_person_path, :class => "waves-effect waves-teal btn-flat" %>
 
 <%= link_to 'Receptor', recep_index_spr_people_path, :class => "waves-effect waves-teal btn-flat" %>
@@ -23,7 +23,7 @@
         <td><%= spr_person.first_name %></td>
         <td><%= spr_person.second_name %></td>
         <td><%= spr_person.first_last_name %></td>
-        <td><%= spr_person.second_last_name %></td>        
+        <td><%= spr_person.second_last_name %></td>
         <td><%= link_to 'Show', spr_person %></td>
         <td><%= link_to 'Edit', edit_spr_person_path(spr_person) %></td>
         <td><%= link_to 'Destroy', spr_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,5 +33,3 @@
 </table>
 
 <br>
-
-
