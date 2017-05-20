@@ -2390,11 +2390,7 @@ p "  -> People: Manufacturing
 					 academic_level_id: Random.rand(1...academic_lev_list.length),
 					 address: Faker::Address.full_address)
 
-	pr1 = Person.create(dnis: Random.rand(4356...13000),
-				  spr_person_id: spr1.id,
-				  birth: Faker::Time.between(80.years.ago, 21.years.ago),
-				  promise_day: Faker::Time.between(70.years.ago, 1.week.ago),
-				  parish_id: Random.rand(1...parish_list.length) )
+	
 
 
 	flag = Faker::Boolean.boolean;
@@ -2402,17 +2398,32 @@ p "  -> People: Manufacturing
 	prc1 = 0;
 		if flag
 			if SprPerson.count>1
+				pr1 = Person.create(dnis: Random.rand(4356...13000),
+				  spr_person_id: spr1.id,
+				  birth: Faker::Time.between(80.years.ago, 21.years.ago),
+				  promise_day: Faker::Time.between(70.years.ago, 1.week.ago),
+				  parish_id: Random.rand(1...parish_list.length) )
+
 				prc1 = ProgramReceptor.create(person_id: pr1.id,
 									      spr_person_id: Random.rand(1...SprPerson.count))
 				Registry.create( program_receptor_id: prc1.id,
-							 person_id: 0,
+							 adult_id: 0,
 				 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago),
 				 			 group_id:  Random.rand(2...groups_list.length),
 							 unity_id: Random.rand(1...unities_list.length),
 							 charge_id: Random.rand(1...23)
 				 			 )		
 			else
-				Registry.create( person_id: pr1.id,
+
+				pr1 = Person.create(dnis: Random.rand(4356...13000),
+				  spr_person_id: spr1.id,
+				  birth: Faker::Time.between(80.years.ago, 21.years.ago),
+				  promise_day: Faker::Time.between(70.years.ago, 1.week.ago),
+				  parish_id: Random.rand(1...parish_list.length) )
+
+				adt = Adult.create(person_id: pr1.id, is_tutor: Faker::Boolean.boolean)
+
+				Registry.create( adult_id: pr1.id,
 						 program_receptor_id: 0,
 			 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago),
 			 			 group_id:  Random.rand(2...groups_list.length),
@@ -2423,7 +2434,15 @@ p "  -> People: Manufacturing
 			
 
 		else
-			Registry.create( person_id: pr1.id,
+			pr1 = Person.create(dnis: Random.rand(4356...13000),
+				  spr_person_id: spr1.id,
+				  birth: Faker::Time.between(80.years.ago, 21.years.ago),
+				  promise_day: Faker::Time.between(70.years.ago, 1.week.ago),
+				  parish_id: Random.rand(1...parish_list.length) )
+
+				adt = Adult.create(person_id: pr1.id, is_tutor: Faker::Boolean.boolean)
+
+			Registry.create( adult_id: pr1.id,
 						 program_receptor_id: 0,
 			 			 registry_date: Faker::Time.between(1.year.ago, 1.week.ago),
 			 			 group_id:  Random.rand(2...groups_list.length),

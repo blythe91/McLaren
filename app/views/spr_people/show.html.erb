@@ -101,10 +101,37 @@
           <strong>Promise day:</strong>
           <%= people.promise_day %>
         </p>
+        
+
+        <% people.adults.each do |adult| %>
+            <p class="col l3 m6 s12">
+              <strong>Capacitador:</strong>
+              <%= adult.is_tutor %>
+            </p>
+            <% adult.registries.each do |regist| %>
+              <p class="col l3 m6 s12">
+                <strong>Unidad:</strong>
+                <%= regist.unity %>
+              </p>
+              <p class="col l3 m6 s12">
+                <strong>Cargo:</strong>
+                <%= regist.charge %>
+              </p>
+              <p class="col l3 m6 s12">
+                <strong>Grupo Scout:</strong>
+                <%= regist.group %>
+              </p>
+
+              <p class="col l3 m6 s12">
+                <strong>Fecha de Registro:</strong>
+                <%= regist.registry_date %>
+              </p>
+            <% end %>
+          <% end %>
         <p class="col l3 m6 s12">
           <strong>Resident Parish:</strong>
           <%= people.parish.to_s %>
-        </p>        
+        </p>
       <% end %>
       
     <% end %>

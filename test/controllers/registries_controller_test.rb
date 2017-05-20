@@ -17,7 +17,7 @@ class RegistriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create registry" do
     assert_difference('Registry.count') do
-      post registries_url, params: { registry: { charge_id: @registry.charge_id, group_id: @registry.group_id, person_id: @registry.person_id, program_receptor_id: @registry.program_receptor_id, registry_date: @registry.registry_date, unity_id: @registry.unity_id } }
+      post registries_url, params: { registry: { adult_id: @registry.adult_id, charge_id: @registry.charge_id, group_id: @registry.group_id, program_receptor_id: @registry.program_receptor_id, registry_date: @registry.registry_date, unity_id: @registry.unity_id } }
     end
 
     assert_redirected_to registry_url(Registry.last)
@@ -34,7 +34,7 @@ class RegistriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update registry" do
-    patch registry_url(@registry), params: { registry: { charge_id: @registry.charge_id, group_id: @registry.group_id, person_id: @registry.person_id, program_receptor_id: @registry.program_receptor_id, registry_date: @registry.registry_date, unity_id: @registry.unity_id } }
+    patch registry_url(@registry), params: { registry: { adult_id: @registry.adult_id, charge_id: @registry.charge_id, group_id: @registry.group_id, program_receptor_id: @registry.program_receptor_id, registry_date: @registry.registry_date, unity_id: @registry.unity_id } }
     assert_redirected_to registry_url(@registry)
   end
 

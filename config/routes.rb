@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :people
+  resources :adults
   resources :registries
+  resources :people
   resources :program_receptors
   get 'welcome/index'
 

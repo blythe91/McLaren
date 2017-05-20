@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518170126) do
+ActiveRecord::Schema.define(version: 20170520032035) do
 
   create_table "academic_levels", force: :cascade do |t|
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "adults", force: :cascade do |t|
+    t.boolean  "is_tutor"
+    t.integer  "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_adults_on_person_id"
   end
 
   create_table "advances", force: :cascade do |t|
@@ -119,13 +127,13 @@ ActiveRecord::Schema.define(version: 20170518170126) do
     t.integer  "group_id"
     t.integer  "charge_id"
     t.integer  "unity_id"
+    t.integer  "adult_id"
     t.integer  "program_receptor_id"
-    t.integer  "person_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.index ["adult_id"], name: "index_registries_on_adult_id"
     t.index ["charge_id"], name: "index_registries_on_charge_id"
     t.index ["group_id"], name: "index_registries_on_group_id"
-    t.index ["person_id"], name: "index_registries_on_person_id"
     t.index ["program_receptor_id"], name: "index_registries_on_program_receptor_id"
     t.index ["unity_id"], name: "index_registries_on_unity_id"
   end

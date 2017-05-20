@@ -4,7 +4,9 @@ class SprPeopleController < ApplicationController
   # GET /spr_people
   # GET /spr_people.json
   def index
-    @spr_people = SprPerson.select("*")
+    @spr_people = SprPerson.select("*").where(
+                                  id: Person.select("spr_person_id").where(
+                                  id: Adult.select("person_id")))
     
   end
 

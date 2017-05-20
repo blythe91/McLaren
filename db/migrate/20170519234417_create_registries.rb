@@ -5,8 +5,8 @@ class CreateRegistries < ActiveRecord::Migration[5.0]
       t.references :group, foreign_key: true
       t.references :charge, foreign_key: true
       t.references :unity, foreign_key: true
+      t.references :adult, foreign_key: true
       t.references :program_receptor, foreign_key: true
-      t.references :person, foreign_key: true
 
       t.timestamps
     end
